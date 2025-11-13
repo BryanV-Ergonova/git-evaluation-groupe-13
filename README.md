@@ -60,17 +60,6 @@ Les fichiers correspondants dans `results/` sont générés via `cat test/<fichi
 ## Remarques
 - Parsing basé sur une expression régulière stricte : toute ligne qui ne correspond pas à `nombre opérateur nombre` renvoie `Erreur de syntaxe...` avec un code de sortie `1`.
 - Les résultats sont arrondis à deux décimales quand nécessaire et simplifiés si la partie décimale est nulle.
-- Le projet est pensé pour suivre GitFlow : toute nouvelle fonctionnalité passe par `feature/<nom>` puis merge vers `main` lorsque la fonctionnalité est stable.
-
-## Publication
-Option bonus : visualiser l’historique avec Gource puis encoder la vidéo avec `ffmpeg`.
-```bash
-gource -s 2 -r 60 --file-font-size 8 --title git-evaluation \
-  --filename-time 2 --stop-at-end --hide date,usernames -o video.ppm
-ffmpeg -y -r 60 -f image2pipe -vcodec ppm -i video.ppm \
-  -vcodec libx264 -preset medium -pix_fmt yuv420p -crf 18 video.mp4
-```
-Publiez ensuite `video.mp4` sur YouTube et mentionnez le lien ici.
 
 ## Références/Liens utiles
 - Cours Git ESGI & workflow GitFlow (documentation du module).
